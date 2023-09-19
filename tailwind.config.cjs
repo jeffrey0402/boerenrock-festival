@@ -4,8 +4,8 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				"hero-pattern": "url('headerboerenrock.png')",
-				"grass-svg": "url('grassborder.svg')",
+				"hero-pattern": "url('/headerboerenrock.png')",
+				"grass-svg": "url('/grassborder.svg')",
 			}
 		},
 	},
