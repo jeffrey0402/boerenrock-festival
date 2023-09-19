@@ -34,7 +34,7 @@ export default function NavBar() {
     <Menu>
       {({ open }) => (
         <>
-        <div className={`${open && "bg-white border-b-2 rounded-t-md"} w-48`}>
+        <div className={`${open && "bg-white border-b-2 rounded-t-md"} w-64`}>
           <Menu.Button>
             {() => open ? (
               <XMarkIcon className="h-10 w-10 m-4 text-black" />
@@ -45,12 +45,12 @@ export default function NavBar() {
             }
           </Menu.Button>
           </div>
-          <Menu.Items className="flex flex-col bg-white px-4 rounded-b-md gap-2 py-4 w-48">
+          <Menu.Items className="flex flex-col bg-white px-4 rounded-b-md gap-2 py-4 w-64">
             {menuItems.map((item) => (
               <Menu.Item key={item.name}>
                 {({ active }) => (
                   <a
-                    className={`${active && 'bg-blue-500'}`}
+                    className={`text-xl ${active && 'bg-violet-500'}`}
                     href={item.href}
                   >
                     {item.name}
