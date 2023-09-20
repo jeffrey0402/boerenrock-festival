@@ -1,81 +1,93 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/NavBar.tsx";
+
+import headerBoerenrock from "../media/headerboerenrock.png";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Boerenrock festival">
-	<div class="bg-hero-pattern h-screen w-screen">
-		<NavBar client:load />
-		<div class="w-full h-[70vh] flex flex-col">
-			<img
-				src="boerenrocklogo.svg"
-				alt="boerenrock festival"
-				class="h-40 mt-48"
-			/>
-			<p
-				class="text-center text-white text-2xl pt-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
-			>
-				15 - 18 August 2024
-			</p>
-			<div class="flex w-96 justify-center self-center">
-				<button
-					class="bg-pink-600 text-white font-semibold rounded-lg py-4 m-auto mt-8 w-40"
-					>Buy your tickets</button
-				>
-				<button
-					class="bg-white text-black font-semibold rounded-lg py-4 m-auto mt-8 w-40"
-					>Info festival</button
-				>
-			</div>
-		</div>
-		
-	</div>
-	<div class="bg-lime-400 w-screen h-24">
-		<div class="bg-grass-svg w-screen h-5 relative -top-4"></div>
-		<p
-			class="text-center pt-4 font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,255)]"
-		>
-			MUSIC • CROSS • TRACTORPULL • ENDURO • CARNIVAL • CAMPING
-		</p>
-		<div class="bg-grass-svg w-screen h-5 relative -bottom-8 rotate-180"></div>
-	</div>
-	<div class="bg-slate-100 w-2/3 p-4 mt-8 rounded-xl m-auto">
-		<table class="table-fixed">
-			<tbody>
-				<tr>
-					<td class="text-xl font-semibold w-48">When?</td>
-					<td class="text-xl font-semibold"
-						>15 - 18 August 2024</td
-					>
-				</tr>
-				<tr>
-					<td class="text-xl font-semibold w-48">Where?</td>
-					<td class="text-xl font-semibold">Drouwenermond</td>
-				</tr>
-				<tr>
-					<td class="text-xl font-semibold w-48">What time?</td>
-					<td class="text-xl font-semibold"
-						>Festival opens at 11:00, music and cross at 14:00</td
-					>
-				</tr>
-				<tr>
-					<td class="text-xl font-semibold w-48"
-						>Who is welcome?</td
-					>
-					<td class="text-xl font-semibold"
-						>For all ages! Whe also have a BSO and fun
-						activities for kids</td
-					>
-				</tr>
-				<tr>
-					<td class="text-xl font-semibold w-48"
-						>Who is coming?</td
-					>
-					<td class="text-xl font-semibold"
-						>Topartists like Frans Bauer, Normaal and many more!</td
-					>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+  <div class={`h-screen w-screen`}>
+    <Image
+      src={headerBoerenrock}
+      alt="Achtergrondfoto van het boerenrockfestival"
+      class="-z-10 h-screen w-screen object-cover"
+    />
+    <div class="absolute top-0 h-screen w-screen">
+      <NavBar client:load />
+      <div class="flex h-[70vh] w-full flex-col">
+        <img
+          src="boerenrocklogo.svg"
+          alt="boerenrock festival"
+          class="mx-4 mt-48 h-40"
+        />
+        <p
+          class="pt-4 text-center text-2xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+        >
+          15 - 18 August 2024
+        </p>
+        <div class="flex w-96 justify-center self-center">
+          <button
+            class="m-auto mt-8 w-40 rounded-lg bg-pink-600 py-4 font-semibold text-white"
+            >Buy your tickets</button
+          >
+          <button
+            class="m-auto mt-8 w-40 rounded-lg bg-white py-4 font-semibold text-black"
+          >
+            Info festival
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="h-24 w-screen bg-lime-400">
+      <div
+        role="presentation"
+        class="relative -top-4 h-5 w-screen bg-grass-svg"
+      >
+      </div>
+      <p
+        class="pt-4 text-center font-bold drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,255)]"
+      >
+        MUSIC • CROSS • TRACTORPULL • ENDURO • CARNIVAL • CAMPING
+      </p>
+    </div>
+    <div
+      role="presentation"
+      class="relative bottom-1 h-5 w-screen rotate-180 bg-grass-svg"
+    >
+    </div>
+    <div class="m-auto mt-8 w-screen md:w-3/4 rounded-xl bg-slate-100 p-4">
+      <table class="table-fixed">
+        <tbody>
+          <tr>
+            <td class="w-48 text-xl font-semibold">When?</td>
+            <td class="text-xl font-semibold">15 - 18 August 2024</td>
+          </tr>
+          <tr>
+            <td class="w-48 text-xl font-semibold">Where?</td>
+            <td class="text-xl font-semibold">Drouwenermond</td>
+          </tr>
+          <tr>
+            <td class="w-48 text-xl font-semibold">What time?</td>
+            <td class="text-xl font-semibold"
+              >Festival opens at 11:00, music and cross at 14:00</td
+            >
+          </tr>
+          <tr>
+            <td class="w-48 text-xl font-semibold">Who is welcome?</td>
+            <td class="text-xl font-semibold"
+              >For all ages! Whe also have a BSO and fun activities for kids</td
+            >
+          </tr>
+          <tr>
+            <td class="w-48 text-xl font-semibold">Who is coming?</td>
+            <td class="text-xl font-semibold"
+              >Topartists like Frans Bauer, Normaal and many more!</td
+            >
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div></div>
 </Layout>

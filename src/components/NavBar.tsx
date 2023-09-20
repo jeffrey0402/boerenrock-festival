@@ -1,6 +1,8 @@
 import { Menu } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
+import logo from "../media/logo.png";
+
 const menuItems: MenuItem[] = [
   {
     name: "Home",
@@ -76,25 +78,15 @@ function DesktopNav() {
       >
         <img
           className="h-20 pt-4 md:block"
-          src="logo.png"
+          src={logo.src}
           alt="het logo van boerenrock een ronde rand waarin je een uitsnijde van het hoofd van scheel kijkende bruine stier met roze zakdoek om zijn nek ziet die de stier legt zijn tanden bloot en hij kijkt alsof hij klaar staat om te vechten en te feesten."
         />
         <ul className="flex justify-between gap-16">
-          <li className="text-white pt-8 text-xl font-semibold">
-            <a href="/">Home</a>
-          </li>
-          <li className="text-white pt-8 text-xl font-semibold">
-            <a href="/about">Tickets</a>
-          </li>
-          <li className="text-white pt-8 text-xl font-semibold">
-            <a href="/info">Info</a>
-          </li>
-          <li className="text-white pt-8 text-xl font-semibold">
-            <a href="/artiesten">Line-up</a>
-          </li>
-          <li className="text-white pt-8 text-xl font-semibold">
-            <a href="/inschrijven">inschrijven</a>
-          </li>
+          {menuItems.map((item) => (
+            <li key={item.name} className="text-white pt-8 text-xl font-semibold">
+              <a href={item.href}>{item.name}</a>
+            </li>
+          ))}
         </ul>
         <img
           className="h-20 pt-4 sm:block"
